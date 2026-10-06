@@ -1,0 +1,579 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+
+/* Reset */
+html {
+    box-sizing: border-box;
+    min-width: 320px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html, body, div, span, h1, h2, h3, h4, p, a, img,
+ul, li, article, footer, header, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, footer, header, nav, section {
+    display: block;
+}
+
+body {
+    background: #fff;
+    color: #888;
+    font-family: "Lato", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.75em;
+    -webkit-text-size-adjust: none;
+}
+
+body.is-preload *,
+body.is-preload *::before,
+body.is-preload *::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #e4e4e4;
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+a:hover {
+    border-bottom-color: transparent;
+    color: #4acaa8 !important;
+}
+
+p {
+    margin: 0 0 2.25em;
+}
+
+h1, h2, h3, h4 {
+    color: #777;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 0 0 0.5625em;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+    border: 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+h3 {
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style: disc;
+    margin: 0 0 2.25em;
+    padding-left: 1em;
+}
+
+ul li {
+    padding-left: 0.5em;
+}
+
+/* Container */
+.container {
+    width: 45em;
+    max-width: calc(100% - 4.5em);
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: calc(100% - 3.375em);
+    }
+}
+
+/* Section / Article */
+header p {
+    color: #aaa;
+    position: relative;
+    margin: 0 0 1.6875em;
+}
+
+header.major h2 {
+    color: #4acaa8;
+    font-size: 3.5em;
+}
+
+header.major h2 + p {
+    color: #777;
+    font-size: 1.75em;
+    font-weight: 700;
+    line-height: 1.5em;
+    margin-top: -0.75em;
+}
+
+/* Image */
+.image {
+    border-radius: 5px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.image[data-position] img {
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image[data-position="center"] img {
+    object-position: center;
+}
+
+.image img {
+    display: block;
+    border-radius: 5px;
+}
+
+.image.avatar {
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.image.avatar img {
+    border-radius: 100%;
+    display: block;
+    width: 100%;
+}
+
+.image.main {
+    display: block;
+    height: 20em;
+    border-radius: 0;
+}
+
+.image.main img {
+    border-radius: 0;
+}
+
+/* Features */
+.features article {
+    border-top: solid 3px #f4f4f4;
+    margin-bottom: 2.25em;
+    padding-top: 2.25em;
+}
+
+.features article:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.features article .image {
+    display: inline-block;
+    padding-right: 2.5em;
+    vertical-align: middle;
+    width: 48%;
+}
+
+.features article .image img {
+    display: block;
+    width: 100%;
+}
+
+.features article .inner {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.features article .inner > :last-child {
+    margin-bottom: 0;
+}
+
+/* Header */
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #4acaa8;
+    color: #d2f2e9;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 23em;
+}
+
+#header h1, #header h2, #header h3, #header h4 {
+    color: #fff;
+}
+
+#header h1 a, #header h2 a, #header h3 a, #header h4 a {
+    color: #fff;
+}
+
+#header header p {
+    color: #b7eadc;
+}
+
+#header a {
+    color: #d2f2e9;
+}
+
+#header a:hover {
+    color: #fff !important;
+}
+
+#header > header {
+    flex-shrink: 0;
+    padding: 3em;
+}
+
+#header > header .avatar {
+    display: block;
+    margin: 0 auto 2.25em;
+    width: 8em;
+}
+
+#header > header h1 {
+    font-size: 1.75em;
+    margin: 0;
+}
+
+#header > header p {
+    color: #d2f2e9;
+    font-style: italic;
+    margin: 1em 0 0;
+}
+
+#header > footer {
+    flex-shrink: 0;
+    padding: 2em;
+    width: 100%;
+}
+
+#header > nav {
+    flex-grow: 1;
+}
+
+#header > nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#header > nav ul li {
+    border-top: solid 2px #5ccfb1;
+    display: block;
+    padding: 0;
+}
+
+#header > nav ul li a {
+    transition: none;
+    border: 0;
+    color: #fff !important;
+    display: block;
+    padding: 0.85em 0;
+    text-decoration: none;
+}
+
+#header > nav ul li a.active {
+    background: #fff;
+    color: #4acaa8 !important;
+}
+
+#header > nav ul li:first-child {
+    border-top: 0;
+}
+
+/* Wrapper / Main */
+#wrapper {
+    background: #fff;
+    padding-right: 23em;
+}
+
+#main > section {
+    border-top: solid 6px #f4f4f4;
+}
+
+#main > section > .container {
+    padding: 6em 0 4em;
+}
+
+#main > section:first-child {
+    border-top: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 1680px) {
+    body {
+        font-size: 13pt;
+    }
+
+    #header {
+        width: 21em;
+    }
+
+    #header > header {
+        padding: 2em;
+    }
+
+    #header > footer {
+        padding: 1.5em;
+    }
+
+    #wrapper {
+        padding-right: 21em;
+    }
+
+    #main > section > .container {
+        padding: 4em 0 2em;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: 11pt;
+    }
+
+    #header {
+        width: 20em;
+    }
+
+    #wrapper {
+        padding-right: 20em;
+    }
+}
+
+/* Mobile header toggle is created by the template JS at <=1024px. */
+#titleBar {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    #header {
+        backface-visibility: hidden;
+        transition: transform 0.5s ease;
+        display: block;
+        height: 100%;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 23em;
+        z-index: 10002;
+        transform: translateX(23em);
+    }
+
+    #header > footer {
+        bottom: auto;
+        left: auto;
+        margin: 0.5em 0 0;
+        position: relative;
+        right: auto;
+        top: auto;
+    }
+
+    #wrapper {
+        backface-visibility: hidden;
+        transition: transform 0.5s ease;
+        padding: 44px 0 1px;
+    }
+
+    #titleBar {
+        backface-visibility: hidden;
+        transition: transform 0.5s ease;
+        display: block;
+        height: 44px;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10001;
+        background: #222;
+        color: #fff;
+        min-width: 320px;
+    }
+
+    #titleBar .title {
+        color: #fff;
+        display: block;
+        font-weight: 700;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 1em;
+        width: 100%;
+        text-align: left;
+    }
+
+    #titleBar .title a {
+        border: 0;
+        text-decoration: none;
+    }
+
+    #titleBar .toggle {
+        text-decoration: none;
+        height: 4em;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 6em;
+        border: 0;
+        outline: 0;
+    }
+
+    #titleBar .toggle::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        background: #4acaa8;
+        color: #fff;
+        content: "\f0c9";
+        display: block;
+        font-size: 18px;
+        height: 44px;
+        line-height: 44px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 64px;
+        right: 0;
+    }
+
+    body.header-visible #wrapper,
+    body.header-visible #titleBar {
+        transform: translateX(-23em);
+    }
+
+    body.header-visible #header {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    .image.main {
+        height: 12em;
+    }
+
+    header br {
+        display: none;
+    }
+
+    header.major h2 {
+        font-size: 2.5em;
+    }
+
+    header.major h2 + p {
+        font-size: 1.5em;
+    }
+
+    .features article .image {
+        display: block;
+        margin: 0 0 2.25em;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .features article .inner {
+        display: block;
+        width: 100%;
+    }
+
+    #header {
+        width: 17em;
+        transform: translateX(17em);
+    }
+
+    #header > header {
+        padding: 2em;
+    }
+
+    #header > header .avatar {
+        margin: 0 auto 1.6875em;
+        width: 6em;
+    }
+
+    #header > header h1 {
+        font-size: 1.5em;
+    }
+
+    #header > header p {
+        margin: 1em 0 0;
+    }
+
+    #header > footer {
+        padding: 1.5em;
+    }
+
+    #main > section > .container {
+        padding: 2em 0 0;
+    }
+
+    body.header-visible #wrapper,
+    body.header-visible #titleBar {
+        transform: translateX(-17em);
+    }
+
+    #titleBar .toggle {
+        height: 4em;
+        width: 6em;
+    }
+
+    #titleBar .toggle::before {
+        font-size: 14px;
+        width: 44px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html, body {
+        min-width: 320px;
+    }
+}
